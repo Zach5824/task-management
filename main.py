@@ -13,7 +13,6 @@ def main_menu():
         choice = input("Enter your choice (1-5): ").strip()
         
         if choice == "1":
-            print("\n--- Create New Task ---")
             title = input("Enter task title: ")
             description = input("Enter task description: ")
             due_date = input("Enter due date (YYYY-MM-DD): ")
@@ -23,18 +22,17 @@ def main_menu():
             view_pending_tasks()
             
         elif choice == "3":
-            print("\n--- Complete a Task ---")
             title = input("Enter the exact title of the task to complete: ")
             mark_task_as_complete(title)
             
         elif choice == "4":
-            calculate_progress()
+            progress = calculate_progress()
+            print(f"Progress: {progress}%")
             
         elif choice == "5":
-            print("Exiting Task Management System. Goodbye!")
             break
         else:
-            print("Invalid choice. Please select an option between 1 and 5.")
+            print("Invalid option chosen.")
 
 if __name__ == "__main__":
     main_menu()
